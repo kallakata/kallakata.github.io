@@ -416,7 +416,7 @@ div.author-profile-embedded ul.author__urls li::marker {
 }
 
 /* ==========================================================================
-   CV Nested List Styling (Terminal Theme)
+   CV Nested List Styling (Terminal Theme - Increased Specificity)
    ========================================================================== */
 
 // --- Variables (Ensure these match your theme) ---
@@ -426,77 +426,83 @@ $terminal-dim-green: #2E8B57;
 $terminal-bg: #1a1a1a;
 $mono-font-stack: "Courier New", Courier, monospace;
 
-// --- Target the CV content area ---
-.cv-content {
+// --- Target the CV content area using parent IDs/Classes for Specificity ---
+// Assumes your content is within #main and .archive based on your layout file
+#main .archive .cv-content {
+  font-family: $mono-font-stack; // Ensure font applies
 
   // Base reset for lists within the CV area
   ul {
-    list-style: none; // Remove default browser bullets/numbers
-    padding-left: 0; // Remove default browser indentation padding
-    margin-left: 0; // Remove default browser indentation margin
+    list-style: none !important; // Remove default browser bullets/numbers forcefully
+    padding-left: 0 !important; // Remove default browser indentation padding forcefully
+    margin-left: 0 !important; // Remove default browser indentation margin forcefully
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
 
   li {
-    position: relative; // Crucial for positioning the ::before element
-    padding-left: 2.5em; // Create space for the marker + gap
-    margin-bottom: 0.3em; // Space between list items
+    position: relative !important; // Crucial for positioning the ::before element
+    padding-left: 2.5em !important; // Create space for the marker + gap
+    margin-bottom: 0.3em !important; // Space between list items
+    line-height: 1.6; // Improve readability for mono font
   }
 
   // --- Default Marker (Level 1 - Job Entries) ---
   // Targets li elements directly inside a ul within .cv-content
   >ul>li::before {
-    content: ">> "; // Your desired top-level marker
-    color: $terminal-green; // Bright green for top level
-    font-weight: bold; // Make it stand out
+    content: ">> " !important; // Your desired top-level marker
+    color: $terminal-green !important; // Bright green for top level
+    font-weight: bold !important; // Make it stand out
 
-    position: absolute; // Position relative to the li
-    left: 0; // Align to the start of the padding area
-    width: 2.5em; // Width of the marker area (adjust with li padding-left)
-    text-align: left; // Align marker text within its area
-    font-family: $mono-font-stack; // Ensure marker uses the right font
+    position: absolute !important; // Position relative to the li
+    left: 0 !important; // Align to the start of the padding area
+    top: 0; // Align marker to the top of the line
+    width: 2.5em !important; // Width of the marker area (adjust with li padding-left)
+    text-align: left !important; // Align marker text within its area
+    font-family: $mono-font-stack !important; // Ensure marker uses the right font
+    line-height: 1.6; // Match li line-height
   }
 
   // --- Nested Marker (Level 2 - Location, Duties heading) ---
   // Targets li elements inside a ul that's inside another li
   ul li::before {
-    content: "-  "; // Different marker for level 2 (dash + 2 spaces)
-    color: $terminal-green; // Standard green
-    font-weight: normal; // Normal weight
+    content: "-  " !important; // Different marker for level 2 (dash + 2 spaces)
+    color: $terminal-green !important; // Standard green
+    font-weight: normal !important; // Normal weight
     // Inherits absolute positioning, width, text-align, font-family
     // Adjust left position if needed based on visual alignment
     // left: 0; // Usually okay to keep at 0 if padding controls indent
+    top: 0; // Align marker to the top of the line
+    line-height: 1.6; // Match li line-height
   }
 
   // --- Deeply Nested Marker (Level 3 - Specific duty points) ---
   // Targets li elements inside a ul that's inside a ul that's inside an li
   ul ul li::before {
-    content: "*   "; // Different marker for level 3 (asterisk + 3 spaces)
-    color: $terminal-dim-green; // Dimmer green for deepest level
+    content: "*   " !important; // Different marker for level 3 (asterisk + 3 spaces)
+    color: $terminal-dim-green !important; // Dimmer green for deepest level
+    top: 0; // Align marker to the top of the line
+    line-height: 1.6; // Match li line-height
     // Inherits absolute positioning, width, text-align, font-family, font-weight
   }
 
   // --- Adjust Indentation for Nested Lists ---
   // Add margin to the nested UL itself to create visual indentation
   ul {
-    margin-left: 1.5em; // Indent nested lists relative to parent li's text start
+    margin-left: 1.5em !important; // Indent nested lists relative to parent li's text start
   }
 
   // Reset margin for the very first UL inside cv-content
   >ul {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
-
-  // Optional: Adjust padding on nested li if ::before positioning needs help
-  // ul li { padding-left: 3em; } // Example: More space for level 2
-  // ul ul li { padding-left: 3.5em; } // Example: Even more space for level 3
 }
 
 // --- Specific adjustments for CV headings if needed ---
-.cv-content h1,
-.cv-content h2,
-.cv-content h3 {
+#main .archive .cv-content h1,
+#main .archive .cv-content h2,
+#main .archive .cv-content h3 {
   // Add specific styles if the default terminal styles aren't quite right for CV headings
   // e.g., margin-top: 1.5em;
+  font-family: $mono-font-stack; // Ensure headings also use mono font if needed
 }
