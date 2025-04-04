@@ -11,7 +11,9 @@ This site serves as a mere hotpot of ideas, scribbled notes, interesting observa
 Quick summary
 ======
 
-{% include author-profile.html %}
+<div class="author-profile-embedded"> 
+  {% include author-profile.html %}
+</div>
 
 ![Say hello!](/assets/hq720.jpg)
 {: style="text-align: center;"}
