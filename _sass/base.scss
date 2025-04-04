@@ -271,3 +271,175 @@ a:active, a:focus {
 #wrapper {
   min-height: calc(100vh - 100px);
 }
+
+  /* ==========================================================================
+Author Profile / Minimal Mistakes structure / Terminal Theme Adaptation
+========================================================================== */
+
+  // --- Variables (adjust colors/fonts as needed) ---
+  $terminal-green: #32CD32;
+  $terminal-link-green: #90EE90;
+  $terminal-dim-green: #2E8B57;
+  $terminal-bg: #1a1a1a; // Or transparent if page background is already dark
+  $mono-font-stack: "Courier New", Courier, monospace;
+
+  // Target the main wrapper div if needed, or apply styles individually
+  div[itemscope][itemtype="http://schema.org/Person"] {
+    font-family: $mono-font-stack;
+    color: $terminal-green;
+    border-top: 1px dotted $terminal-dim-green;
+    border-bottom: 1px dotted $terminal-dim-green;
+    padding: 1em 0;
+    margin: 1.5em 0;
+    background-color: $terminal-bg; // Use theme background
+
+    // Makes avatar and content sit side-by-side typically
+    // Remove or adjust if you prefer them stacked vertically
+    @media (min-width: 768px) {
+      // Or your theme's breakpoint
+      // display: flex; 
+    }
+  }
+
+  .author__avatar {
+    // display: block; // Use block if not using flexbox on parent
+    // margin-right: 1em; // Space between avatar and text if using flex
+    margin-bottom: 1em; // Space below avatar if stacked
+    text-align: center; // Center if stacked
+
+    img {
+      // max-width: 100px; // Control size
+      width: 100px; // Fixed width
+      height: 100px; // Fixed height to ensure consistency
+      object-fit: cover; // Prevents distortion if aspect ratio differs
+      border-radius: 0; // No rounded corners
+      border: 1px solid $terminal-dim-green;
+      display: inline-block; // Allows centering
+      box-shadow: none;
+    }
+  }
+
+  .author__content {
+    // flex-grow: 1; // Allows content to take remaining space if using flex
+    text-align: center; // Center text if stacked or single column
+
+    @media (min-width: 768px) {
+      // text-align: left; // Align left if side-by-side
+    }
+  }
+
+  .author__name {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    font-size: 1.4em;
+    color: $terminal-green;
+  }
+
+  .author__pronouns {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    font-size: 0.8em;
+    color: $terminal-dim-green;
+  }
+
+  .author__bio {
+    margin-bottom: 1em;
+    font-size: 0.95em;
+    color: $terminal-green;
+  }
+
+  .author__urls-wrapper {
+    margin-top: 1em;
+    text-align: center; // Center follow button and link list heading
+
+    @media (min-width: 768px) {
+      // text-align: left; // Align left if side-by-side
+    }
+
+    .btn {
+      // Basic button styling
+      font-family: $mono-font-stack;
+      background-color: $terminal-dim-green;
+      border: 1px solid $terminal-green;
+      color: $terminal-green;
+      padding: 0.5em 1em;
+      margin-bottom: 1em;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 0;
+
+      &:hover {
+        background-color: $terminal-green;
+        color: $terminal-bg;
+        border-color: $terminal-green;
+      }
+    }
+
+    // Remove default Minimal Mistakes button styles if they interfere
+    .btn--inverse {
+      // Override specific MM styles if needed
+    }
+  }
+
+
+  ul.author__urls {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    // display: inline-block; // Allows centering if parent is text-align: center
+    // text-align: left; // Align list items left within the centered block
+
+    li {
+      margin-bottom: 0.5em;
+      font-size: 0.9em;
+
+      a {
+        color: $terminal-green;
+        text-decoration: none; // Remove underline by default
+
+        &:hover {
+          color: $terminal-link-green;
+          text-decoration: underline;
+        }
+
+        i {
+          // Icons within links
+          margin-right: 0.7em;
+          color: $terminal-green; // Match text color
+          width: 1.2em; // Align icons
+          text-align: center;
+          vertical-align: middle; // Align icon better
+
+          // Minimal Mistakes uses icon-pad-right, let's ensure it works
+          &.icon-pad-right {
+            margin-right: 0.7em;
+          }
+        }
+
+        // Ensure text label aligns well
+        vertical-align: middle;
+      }
+
+      // Style non-link items (like location, employer)
+      i {
+        margin-right: 0.7em;
+        color: $terminal-green;
+        width: 1.2em;
+        text-align: center;
+        vertical-align: middle;
+
+        &.icon-pad-right {
+          margin-right: 0.7em;
+        }
+      }
+    }
+  }
+
+  // Hide items meant only for desktop on smaller screens if desired
+  // Based on the presence of 'author__desktop' class in the include
+  // @media (max-width: 767px) { // Adjust breakpoint
+  //   .author__desktop {
+  //     display: none;
+  //   }
+  // }
