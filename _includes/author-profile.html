@@ -10,7 +10,7 @@
     {% if author.avatar contains "://" %}
     <img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
-    <img src="{{ author.avatar | prepend: " /assets/" | prepend: base_path }}" class="author__avatar"
+    <img src="{{ author.avatar | prepend: "/assets/" | prepend: base_path }}" class="author__avatar"
       alt="{{ author.name }}">
     {% endif %}
   </div>
@@ -23,7 +23,7 @@
 
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">c
+    <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
       <li class="author__desktop"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{
