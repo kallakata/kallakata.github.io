@@ -422,34 +422,41 @@ div.author-profile-embedded ul.author__urls li::marker {
 
 // --- Target the CV content area ---
 #main .archive.cv-content {
-  // Assuming you added .cv-content to the .archive div in layout
   font-family: $mono-font-stack;
 
   // --- Base Reset for Lists within CV Area ---
   ul {
     list-style: none !important;
-    list-style-image: none !important; // Be explicit on UL too
+    list-style-image: none !important;
     padding-left: 0 !important;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    margin-left: 1.5em !important; // Indent nested lists
+    margin-left: 1.5em !important;
   }
 
   >ul {
-    margin-left: 0 !important; // No indent for top-level list block
+    margin-left: 0 !important;
   }
 
   // --- List Item Styling ---
   li {
     position: relative !important;
-    // --- FORCE REMOVAL OF DEFAULT BULLET/IMAGE ---
-    list-style: none !important; // Reset all list styles
-    list-style-image: none !important; // Explicitly remove image bullet
-    // --- End Force Removal ---
-    padding-left: 2.5em !important; // Space for custom marker
-    margin-bottom: 0.4em !important;
+    list-style: none !important;
+    list-style-image: none !important;
+    padding-left: 2.5em !important;
+    margin-bottom: 0.4em !important; // Default margin for ALL list items
     line-height: 1.6;
   }
+
+  // --- START: Add Extra Space Between Top-Level Jobs ---
+  >ul>li {
+    // Targets ONLY the top-level list items (Job entries)
+    margin-bottom: 1.8em !important; // Increase this value for more space (e.g., 1.5em, 2em)
+    // Needs !important to override the general li rule above
+  }
+
+  // --- END: Add Extra Space ---
+
 
   // --- Common Styles for ALL Markers ---
   li::before {
@@ -485,5 +492,7 @@ div.author-profile-embedded ul.author__urls li::marker {
   }
 
 }
+
+// End of #main .archive.cv-content styles
 
 // End of #main .archive .cv-content styles
