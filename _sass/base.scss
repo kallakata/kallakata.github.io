@@ -1,16 +1,21 @@
-/*
-   original: https://github.com/pages-themes/hacker 
-*/
-
 @import "rouge-base16-dark";
 @import "default_colors";
 
+// --- Theme Variables ---
 $body-background: $cod-grey !default;
 $body-foreground: $gallery !default;
 $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
 
+// --- Terminal/Profile Variables ---
+$terminal-green: #32CD32;
+$terminal-link-green: #90EE90;
+$terminal-dim-green: #2E8B57;
+$terminal-bg: #1a1a1a;
+$mono-font-stack: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+// --- Base Styles ---
 body {
   margin: 0;
   padding: 0;
@@ -18,40 +23,45 @@ body {
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: $mono-font-stack;
 }
 
 /* General & 'Reset' Stuff */
-
 .container {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-
 section {
   display: block;
   margin: 0 0 20px 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0 0 20px;
+  font-weight: normal;
+  font-family: $mono-font-stack;
+  color: $header;
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(181, 232, 83, 0.1),
+    0 0 10px rgba(181, 232, 83, 0.1);
 }
 
 li {
-  line-height: 1.4 ;
+  line-height: 1.4;
 }
 
-/* Header, <header>
-   header   - container
-   h1       - project name
-   h2       - project description
-*/
-
+/* Header */
 header {
   background: rgba(0, 0, 0, 0.1);
-  border-bottom: 1px dashed $conifer; //header;
+  border-bottom: 1px dashed $conifer;
   padding: 20px;
   margin: 0 0 40px 0;
 }
@@ -70,11 +80,11 @@ header h1 {
   margin: 0;
   text-align: center;
   font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $conifer;//$header;
+  font-family: $mono-font-stack;
+  color: $conifer;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
+    0 0 5px rgba(181, 232, 83, 0.1),
+    0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
 }
@@ -85,25 +95,15 @@ header h2 {
   color: #666;
 }
 
-/* Main Content
-*/
 
+/* Main Content Area */
 #main_content {
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }
-section img {
-  max-width: 100%
-}
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $header;
-  letter-spacing: -0.03em;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
+#main_content section img {
+  max-width: 100%;
 }
 
 #main_content h1 {
@@ -140,10 +140,6 @@ dt {
   font-weight: bold;
 }
 
-// ul li {
-//   list-style-image:url('../assets/bullet.png');
-// }
-
 blockquote {
   color: $blockquote-color;
   padding-left: 10px;
@@ -154,21 +150,23 @@ pre {
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px;
-  font-size: 16px;
-  color: #b5e853;
+  font-size: 1em; // Use relative unit
+  color: #b5e853; // Use variable?
   border-radius: 2px;
   text-wrap: normal;
   overflow: auto;
   overflow-y: hidden;
+  font-family: $mono-font-stack; // Ensure font
 }
 
 code.highlighter-rouge {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0px 3px;
   margin: 0px -3px;
-  color: #aa759f;
+  color: #aa759f; // Use variable?
   border-radius: 2px;
+  font-family: $mono-font-stack; // Ensure font
 }
 
 table {
@@ -189,13 +187,12 @@ td {
 hr {
   height: 0;
   border: 0;
-  border-bottom: 1px dashed #b5e853;
-  color: #b5e853;
+  border-bottom: 1px dashed $header; // Use variable
+  color: $header; // Use variable
+  margin: 2em 0;
 }
 
-/* Buttons
-*/
-
+/* Buttons */
 .btn {
   display: inline-block;
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
@@ -205,7 +202,7 @@ hr {
   border-bottom: 2px solid rgba(0, 0, 0, 0.7);
   border-top: 2px solid rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 0.8);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif; // Button font is often different
   font-weight: bold;
   font-size: 13px;
   text-decoration: none;
@@ -230,39 +227,37 @@ hr {
   background: url("../images/blacktocat.png") 0 0 no-repeat;
 }
 
-/* Links
-   a, a:hover, a:visited
-*/
-
+/* Links */
 a {
-  color: #63c0f5;
+  color: #63c0f5; // Use variable?
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
-a:active, a:focus {
+a:active,
+a:focus {
   outline: 0;
   border: none;
-  -moz-outline-style: none
+  -moz-outline-style: none;
 }
 
 /* Clearfix */
-
-.cf:before, .cf:after {
-  content:"";
-  display:table;
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
 }
 
 .cf:after {
-  clear:both;
+  clear: both;
 }
 
 .cf {
-  zoom:1;
+  zoom: 1;
 }
 
-/* Make footer stick to bottom */
-
-.pagination, footer {
+/* Footer / Pagination */
+.pagination,
+footer {
   height: 50px;
   line-height: 50px;
   text-align: center;
@@ -272,31 +267,21 @@ a:active, a:focus {
   min-height: calc(100vh - 100px);
 }
 
+
 /* ==========================================================================
-   Embedded Author Profile (Minimal Mistakes structure / Terminal Theme)
+   Embedded Author Profile
    ========================================================================== */
-
-// --- Variables (Ensure these match your theme) ---
-$terminal-green: #32CD32;
-$terminal-link-green: #90EE90;
-$terminal-dim-green: #2E8B57;
-$terminal-bg: #1a1a1a; // Use your site's main dark background
-$mono-font-stack: "Courier New", Courier, monospace;
-
-// --- Style the main profile container ---
 div[itemscope][itemtype="http://schema.org/Person"].author-profile-embedded {
-  // Added a specific class
   font-family: $mono-font-stack;
   color: $terminal-green;
-  background-color: $terminal-bg; // Match page background
-  border: 1px dotted $terminal-dim-green; // Use the dotted border style
-  border-radius: 0; // No rounded corners
-  padding: 1.5em; // Internal spacing
-  margin: 2em auto; // Space above/below, auto margins for potential centering if width is set
-  max-width: 450px; // Limit width for a box effect, adjust as needed
-  text-align: center; // Center-align avatar, name, bio by default
+  background-color: $terminal-bg;
+  border: 1px dotted $terminal-dim-green;
+  border-radius: 0;
+  padding: 1.5em;
+  margin: 2em auto;
+  max-width: 450px;
+  text-align: center;
 
-  // Clear any floats if necessary from other themes/styles
   &:after {
     content: "";
     display: table;
@@ -304,67 +289,55 @@ div[itemscope][itemtype="http://schema.org/Person"].author-profile-embedded {
   }
 }
 
-// --- Avatar Styling ---
 .author-profile-embedded .author__avatar {
-  // Remove styles from the container div for now
   margin-bottom: 1.5em;
-  text-align: left; // Keep centering the container's content
+  text-align: left;
 }
 
-/* Remove the custom list marker (e.g., ">>") from the author profile list */
 div.author-profile-embedded ul.author__urls li::marker {
   content: '';
-  /* Set content to an empty string */
   font-size: 0;
-  /* Ensure it takes up no space */
   padding: 0;
-  /* Remove any padding */
   margin: 0;
-  /* Remove any margin */
 }
 
 .author-profile-embedded .author__avatar img {
-  // Apply styles ONLY to the image itself
   display: inline-block;
   width: 120px;
   height: 120px;
   object-fit: cover;
-  border-radius: 50%; // Make the IMAGE circular
+  border-radius: 50%;
   border: 2px solid $terminal-dim-green;
-  // Remove background-color from the image tag, it's not needed
   box-shadow: none;
 }
 
-// --- Text Content Styling ---
 .author-profile-embedded .author__content {
-  margin-bottom: 1.5em; // Space below the bio
+  margin-bottom: 1.5em;
 }
 
 .author-profile-embedded .author__name {
   margin-top: 0;
   margin-bottom: 0.25em;
   font-size: 1.4em;
-  color: $terminal-green; // Bright green for name
+  color: $terminal-green;
 }
 
 .author-profile-embedded .author__pronouns {
   margin-top: 0;
   margin-bottom: 0.5em;
   font-size: 0.8em;
-  color: $terminal-dim-green; // Dimmer green for pronouns
+  color: $terminal-dim-green;
 }
 
 .author-profile-embedded .author__bio {
   margin-bottom: 0;
   font-size: 0.95em;
-  color: $terminal-green; // Standard green for bio
+  color: $terminal-green;
 }
 
-// --- Links List Styling ---
 .author-profile-embedded .author__urls-wrapper {
   margin-top: 1em;
 
-  // Remove the Follow button styling unless you want it
   .btn {
     display: none;
   }
@@ -373,38 +346,33 @@ div.author-profile-embedded ul.author__urls li::marker {
 .author-profile-embedded ul.author__urls {
   list-style: none;
   padding: 0;
-  margin: 0 auto; // Center the list block itself
-  display: inline-block; // Allow margin auto to work for centering
-  text-align: left; // Align text *within* the list items to the left
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
 
   li {
-    margin-bottom: 0.6em; // Slightly more space between items
+    margin-bottom: 0.6em;
     font-size: 0.9em;
 
-    // Style for linked items (Website, Email, GitHub, etc.)
     a {
       color: $terminal-green;
-      text-decoration: none; // No underline by default
+      text-decoration: none;
+      vertical-align: middle;
 
       &:hover {
-        color: $terminal-link-green; // Lighter green on hover
-        text-decoration: underline; // Underline on hover
+        color: $terminal-link-green;
+        text-decoration: underline;
       }
 
       i {
-        // Icons within links
-        margin-right: 0.8em; // Adjust spacing
-        color: $terminal-green; // Icon color matches text
-        width: 1.3em; // Ensure icons have enough space and align
+        margin-right: 0.8em;
+        color: $terminal-green;
+        width: 1.3em;
         text-align: center;
-        vertical-align: middle; // Align icon vertically with text
+        vertical-align: middle;
       }
-
-      // Align text label vertically
-      vertical-align: middle;
     }
 
-    // Style for non-linked items (Location, Employer)
     i {
       margin-right: 0.8em;
       color: $terminal-green;
@@ -417,82 +385,195 @@ div.author-profile-embedded ul.author__urls li::marker {
 
 
 /* ==========================================================================
-   CV Nested List Styling (Overrides Global & Provides Custom Markers)
+   CV Page Specific Styles (#main .archive.cv-content)
    ========================================================================== */
-
-// --- Target the CV content area ---
 #main .archive.cv-content {
   font-family: $mono-font-stack;
 
-  // --- Base Reset for Lists within CV Area ---
-  ul {
-    list-style: none !important;
-    list-style-image: none !important;
-    padding-left: 0 !important;
+  // --- General Section Styling ---
+  .cv-section {
+    margin-bottom: 2.5em;
+  }
+
+  .cv-section-title {
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $header;
+    color: $header;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-family: $mono-font-stack;
+  }
+
+  // --- Two-Column Grid Layout (Experience, Education) ---
+  .cv-grid {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 1.5em 1.5em;
+    align-items: start;
+  }
+
+  .cv-grid-left {
+    text-align: right;
+    padding-right: 1.5em;
+    border-right: 1px solid $blockquote-border;
+    color: $blockquote-color;
+    position: relative;
+    padding-top: 0.1em;
+  }
+
+  .cv-grid-right {
+    padding-left: 1.5em;
+
+    >*:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0.3em;
+      margin-bottom: 0.5em;
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 1.5em;
+      padding-left: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+
+      li {
+        list-style: disc !important;
+        list-style-image: none !important;
+        padding-left: 0.5em !important;
+        margin-bottom: 0.2em !important;
+        position: static !important;
+
+        &::before {
+          content: none !important;
+        }
+      }
+    }
+  }
+
+  // --- Responsive Grid ---
+  @media (max-width: 768px) {
+    .cv-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5em 0;
+    }
+
+    .cv-grid-left {
+      text-align: left;
+      border-right: none;
+      border-bottom: 1px dashed $blockquote-border;
+      padding-right: 0;
+      padding-bottom: 0.5em;
+      margin-bottom: 0.5em;
+      color: $body-foreground;
+      font-weight: bold;
+    }
+
+    .cv-grid-right {
+      padding-left: 0;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  // End Grid Responsive
+
+
+  // --- START: Indented List Styling (Skills, Languages, Certs) ---
+  >.cv-section:not(:has(.cv-grid))>ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: 1.5em !important;
+    margin-bottom: 0;
   }
 
-  >ul {
-    margin-left: 0 !important;
-  }
-
-  // --- List Item Styling ---
-  li {
-    position: relative !important;
+  >.cv-section:not(:has(.cv-grid))>ul>li {
     list-style: none !important;
     list-style-image: none !important;
-    padding-left: 2.5em !important;
-    margin-bottom: 0.4em !important; // Default margin for ALL list items
+    padding-left: 1.5em; // Indentation
+    margin-bottom: 0.8em; // <<< ADJUSTED FROM 0.5em for more space
+    position: relative;
+    font-family: $mono-font-stack;
+    color: $body-foreground;
     line-height: 1.6;
+
+    &::before {
+      content: "- ";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $body-foreground;
+      font-family: $mono-font-stack;
+      font-weight: normal;
+      line-height: 1.6;
+    }
+
+    strong {
+      font-weight: bold;
+      color: $body-foreground;
+    }
   }
 
-  // --- START: Add Extra Space Between Top-Level Jobs ---
-  >ul>li {
-    // Targets ONLY the top-level list items (Job entries)
-    margin-bottom: 1.8em !important; // Increase this value for more space (e.g., 1.5em, 2em)
-    // Needs !important to override the general li rule above
+  // --- END: Indented List Styling ---
+
+  /* --- START: Specific List Item Styling (Job Title Intro) --- */
+  // Optional: If using Method 1 from previous answer
+  ul.unstyled-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 1.5em; // Space below this intro list
   }
 
-  // --- END: Add Extra Space ---
+  li.job-title-intro {
+    list-style-image: url('../assets/bullet.png');
+    list-style-type: none;
+    margin-left: 1.5em; // Indentation to align with bullet
+    font-family: $mono-font-stack;
+    color: $body-foreground;
+    line-height: 1.5;
 
-
-  // --- Common Styles for ALL Markers ---
-  li::before {
-    content: "";
-    position: absolute !important;
-    left: 0 !important;
-    top: 0;
-    width: 2.5em !important;
-    text-align: left !important;
-    font-family: $mono-font-stack !important;
-    line-height: 1.6;
+    &::before {
+      content: none !important; // Remove dash if it gets applied
+    }
   }
 
-  // --- Marker Style - Level 1 ---
-  >ul>li::before {
-    content: ">> " !important;
-    color: $terminal-green !important;
-    font-weight: bold !important;
+  /* --- END: Specific List Item Styling (Job Title Intro) --- */
+
+  /* --- START: Paragraph with Simulated Bullet (Job Title Intro) --- */
+  // Optional: If using Method 2 from previous answer
+  p.intro-paragraph-with-bullet {
+    background-image: url('../assets/bullet.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px; // Adjust based on bullet size + gap
+    font-family: $mono-font-stack;
+    color: $body-foreground;
+    line-height: 1.5;
+    margin-left: 0;
   }
 
-  // --- Marker Style - Level 2 ---
-  ul ul>li::before {
-    content: "-  " !important;
-    color: $terminal-green !important;
-    font-weight: normal !important;
-  }
+  /* --- END: Paragraph with Simulated Bullet (Job Title Intro) --- */
 
-  // --- Marker Style - Level 3 ---
-  ul ul ul>li::before {
-    content: "*   " !important;
-    color: $terminal-dim-green !important;
-    font-weight: normal !important;
-  }
 
 }
 
-// End of #main .archive.cv-content styles
+// --- End #main .archive.cv-content Scope ---
 
-// End of #main .archive .cv-content styles
+
+/* ==========================================================================
+   Global List Styling (Fallback - Optional)
+   ========================================================================== */
+// ul li { list-style-image: url('../assets/bullet.png'); } // Keep commented
+
+// --- Ensure the author profile list doesn't get image bullets ---
+.author-profile-embedded ul li {
+  list-style: none !important;
+  list-style-image: none !important;
+}
