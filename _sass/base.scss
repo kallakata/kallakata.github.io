@@ -415,50 +415,88 @@ div.author-profile-embedded ul.author__urls li::marker {
   }
 }
 
+
 /* ==========================================================================
-CV Nested List Styling (Terminal Theme - Using ::before)
+Global List Styling (Default Bullet Image)
 ========================================================================== */
 
-// --- Variables (Ensure these match your theme) ---
-$terminal-green: #32CD32;
-$terminal-link-green: #90EE90;
-$terminal-dim-green: #2E8B57;
-$terminal-bg: #1a1a1a;
-$mono-font-stack: "Courier New", Courier, monospace;
+// Apply default bullet image, but NOT inside .cv-content
+// Use :where() for low specificity so it's easily overridden
+:where(body:not(:has(.cv-content)) ul li),
+:where(.some-other-container ul li) {
+  // Add other selectors if needed
+  list-style-image: url('../assets/bullet.png');
+  // Add some margin if the image bullet needs space
+  // margin-left: 0.5em; 
+}
 
-// --- Target the CV content area ---
-// Use a specific enough selector, e.g., based on your layout/wrapper div
+// Alternative (simpler but might require !important overrides more often):
+// ul li {
+//   list-style-image: url('../assets/bullet.png');
+// }
+
+
+/* ==========================================================================
+CV Nested List Styling (Overrides Global & Provides Custom Markers)
+========================================================================== */
+
+// --- Target the CV content area using parent IDs/Classes for Specificity ---
+// Assumes your content is within #main and .archive based on your layout file
 #main .archive .cv-content {
-  // Adjust selector if needed
-  font-family: $mono-font-stack;
+  font-family: $mono-font-stack; // Ensure font applies
 
   // Base reset for lists within the CV area
   ul {
-    // Override the global list-style-image for CV lists
-    list-style-image: none !important;
-    list-style-type: none !important; // Also remove default bullets/numbers
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+    list-style: none !important; // Remove default/image bullets forcefully
+    padding-left: 0 !important; // Remove default browser indentation padding forcefully
+    margin-left: 0 !important; // Remove default browser indentation margin forcefully
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
 
   li {
-    position: relative !important;
-    // Reset list-style-image just in case it's inherited weirdly
-    list-style-image: none !important;
-    list-style-type: none !important;
-    padding-left: 2.5em !important; // Create space for the ::before marker
-    margin-bottom: 0.3em !important;
-    line-height: 1.6;
+    position: relative !important; // Crucial for positioning the ::before element
+    list-style: none !important; // Ensure no bullets apply directly to li
+    padding-left: 2.5em !important; // Create space for the marker + gap
+    margin-bottom: 0.3em !important; // Space between list items
+    line-height: 1.6; // Improve readability for mono font
   }
 
-  // --- Default Marker (Level 1 - Job Entries) using ::before ---
+  // --- Default Marker (Level 1 - e.g., Job Entries) using ::before ---
   >ul>li::before {
     content: ">> " !important; // Top-level marker
-    color: $terminal-green !important;
-    font-weight: bold !important;
+    color: $terminal-green !important; // Bright green for top level
+    font-weight: bold !important; // Make it stand out
 
+    position: absolute !important; // Position relative to the li
+    left: 0 !important; // Align to the start of the padding area
+    top: 0; // Align marker to the top of the line
+    width: 2.5em !important; // Width of the marker area (adjust with li padding-left)
+    text-align: left !important; // Align marker text within its area
+    font-family: $mono-font-stack !important; // Ensure marker uses the right font
+    line-height: 1.6; // Match li line-height
+  }
+
+  // --- Nested Marker (Level 2 - e.g., Location, Duties heading) using ::before ---
+  ul li::before {
+    content: "-  " !important; // Level 2 marker (dash + 2 spaces)
+    color: $terminal-green !important; // Standard green
+    font-weight: normal !important; // Normal weight
+    // Inherits absolute positioning, width, text-align, font-family
+    position: absolute !important; // Re-declare just in case
+    left: 0 !important;
+    top: 0;
+    width: 2.5em !important;
+    text-align: left !important;
+    font-family: $mono-font-stack !important;
+    line-height: 1.6; // Match li line-height
+  }
+
+  // --- Deeply Nested Marker (Level 3 - e.g., Specific duty points) using ::before ---
+  ul ul li::before {
+    content: "*   " !important; // Level 3 marker (asterisk + 3 spaces)
+    color: $terminal-dim-green !important; // Dimmer green for deepest level
+    // Inherits most properties, re-declare necessary ones
     position: absolute !important;
     left: 0 !important;
     top: 0;
@@ -468,39 +506,22 @@ $mono-font-stack: "Courier New", Courier, monospace;
     line-height: 1.6; // Match li line-height
   }
 
-  // --- Nested Marker (Level 2 - Location, Duties heading) using ::before ---
-  ul li::before {
-    content: "-  " !important; // Level 2 marker (dash + 2 spaces)
-    color: $terminal-green !important;
-    font-weight: normal !important;
-    // Inherits position, width, alignment, font
-    top: 0;
-    line-height: 1.6;
-  }
-
-  // --- Deeply Nested Marker (Level 3 - Specific duty points) using ::before ---
-  ul ul li::before {
-    content: "*   " !important; // Level 3 marker (asterisk + 3 spaces)
-    color: $terminal-dim-green !important;
-    // Inherits position, width, alignment, font, weight
-    top: 0;
-    line-height: 1.6;
-  }
-
   // --- Adjust Indentation for Nested Lists ---
+  // Add margin to the nested UL itself to create visual indentation
   ul {
-    margin-left: 1.5em !important; // Indent nested lists
+    margin-left: 1.5em !important; // Indent nested lists relative to parent li's text start
   }
 
+  // Reset margin for the very first UL inside cv-content
   >ul {
-    margin-left: 0 !important; // Reset indent for top-level list
+    margin-left: 0 !important;
   }
 }
 
-// --- Reset global list-style-image if it causes issues elsewhere ---
-// Optional: If the global rule breaks other lists, you might need to make
-// the original rule more specific, e.g., apply it only outside .cv-content
-// body:not(.cv-content) ul li {
-//   list-style-image: url('../assets/bullet.png');
-// }
-// OR only apply it to specific containers where you want it.
+/* ==========================================================================
+Other Styles (Author Profile, etc.)
+========================================================================== */
+
+// Include your .author-profile-embedded styles here...
+
+// Include any other custom styles...
