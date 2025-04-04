@@ -140,9 +140,9 @@ dt {
   font-weight: bold;
 }
 
-ul li {
-  list-style-image:url('../assets/bullet.png');
-}
+// ul li {
+//   list-style-image:url('../assets/bullet.png');
+// }
 
 blockquote {
   color: $blockquote-color;
@@ -421,75 +421,68 @@ div.author-profile-embedded ul.author__urls li::marker {
    ========================================================================== */
 
 // --- Target the CV content area ---
-// Assumes your CV markdown is rendered inside #main .archive
-// and you wrap the CV content itself with <div class="cv-content">
-#main .archive .cv-content {
-  // Use the desired monospace font for the CV list section
-  font-family: $mono-font-stack; // Make sure this variable is defined
+#main .archive.cv-content {
+  // Assuming you added .cv-content to the .archive div in layout
+  font-family: $mono-font-stack;
 
   // --- Base Reset for Lists within CV Area ---
   ul {
-    list-style: none !important; // Remove default/image bullets forcefully
-    padding-left: 0 !important; // Remove default browser padding
-    margin-top: 0.5em; // Adjust vertical spacing between list blocks
+    list-style: none !important;
+    list-style-image: none !important; // Be explicit on UL too
+    padding-left: 0 !important;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
-    // Apply indentation margin to NESTED lists (level 2 and deeper)
-    margin-left: 1.5em !important; // Adjust value for desired indent size
+    margin-left: 1.5em !important; // Indent nested lists
   }
 
-  // --- Remove Indentation Margin for the TOP-LEVEL List ---
-  // The direct child UL of .cv-content should not be indented
   >ul {
-    margin-left: 0 !important;
+    margin-left: 0 !important; // No indent for top-level list block
   }
 
   // --- List Item Styling ---
   li {
-    position: relative !important; // Needed for absolute positioning of ::before
-    list-style: none !important; // Ensure no bullets appear on the li itself
-    padding-left: 2.5em !important; // Create space for the custom marker (adjust width below too)
-    margin-bottom: 0.4em !important; // Space between list items
-    line-height: 1.6; // Adjust for readability with monospace font
+    position: relative !important;
+    // --- FORCE REMOVAL OF DEFAULT BULLET/IMAGE ---
+    list-style: none !important; // Reset all list styles
+    list-style-image: none !important; // Explicitly remove image bullet
+    // --- End Force Removal ---
+    padding-left: 2.5em !important; // Space for custom marker
+    margin-bottom: 0.4em !important;
+    line-height: 1.6;
   }
 
   // --- Common Styles for ALL Markers ---
   li::before {
-    content: ""; // Default empty content
-    position: absolute !important; // Position relative to the li
-    left: 0 !important; // Align to the start of the li's padding area
-    top: 0; // Align marker vertically to the top of the line
-    width: 2.5em !important; // Must match li padding-left for alignment
-    text-align: left !important; // Align marker text within its space
-    font-family: $mono-font-stack !important; // Ensure marker uses the correct font
-    line-height: 1.6; // Match li line-height for vertical alignment
+    content: "";
+    position: absolute !important;
+    left: 0 !important;
+    top: 0;
+    width: 2.5em !important;
+    text-align: left !important;
+    font-family: $mono-font-stack !important;
+    line-height: 1.6;
   }
 
   // --- Marker Style - Level 1 ---
-  // Targets direct li children of the first ul inside .cv-content
   >ul>li::before {
-    content: ">> " !important; // Level 1 marker text
-    color: $terminal-green !important; // Make sure variable is defined
+    content: ">> " !important;
+    color: $terminal-green !important;
     font-weight: bold !important;
   }
 
   // --- Marker Style - Level 2 ---
-  // Targets direct li children of a ul nested inside another ul
   ul ul>li::before {
-    content: "-  " !important; // Level 2 marker text (dash + 2 spaces for alignment)
+    content: "-  " !important;
     color: $terminal-green !important;
     font-weight: normal !important;
   }
 
   // --- Marker Style - Level 3 ---
-  // Targets direct li children of a ul nested inside a ul nested inside a ul
   ul ul ul>li::before {
-    content: "*   " !important; // Level 3 marker text (asterisk + 3 spaces for alignment)
-    color: $terminal-dim-green !important; // Make sure variable is defined
+    content: "*   " !important;
+    color: $terminal-dim-green !important;
     font-weight: normal !important;
   }
-
-  // --- Add styles for Level 4 and deeper if needed, following the pattern ---
-  // ul ul ul ul > li::before { ... }
 
 }
 
