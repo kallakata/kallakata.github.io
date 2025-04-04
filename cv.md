@@ -11,7 +11,7 @@ redirect_from:
 
 **Platform Engineer** _@SemanticVisions_
 
-Prague, Czechia
+**City:** Prague, Czechia
 
 - **Email:** pavel.varenka@protonmail.com
 - **Phone:** 732967832
@@ -25,7 +25,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
 # Work Experience
 
 - **September 2024 - Present:** Platform Engineer at **Semantic Visions**
-
   - Prague, Czechia
 
 - **June 2021 - Present:** Various clinets - **freelance**
@@ -34,7 +33,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
   - _Duties included:_ DevOps/Platform Engineering projects, both short and long-term ones
 
 - **November 2023 - August 2024:** Senior Platform Engineer at **Mews**
-
   - Prague, Czechia
   - _Duties included:_
     - Managing Azure resources (Container Apps, App Services, SQL server, ServiceBus,...)
@@ -46,7 +44,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
     - Trying to automate everything we can :-)
 
 - **January 2023 - August 2023:** DevOps Engineer at **GWI**
-
   - London, England, United Kingdom
   - _Duties included:_
     - Code reviews and support of developers
@@ -65,7 +62,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
     - Experimenting with distributed systems and novel solutions
 
 - **May 2022 - July 2023:** DevSecOps Engineer at **CleverMaps**
-
   - Prague, Czechia
   - _Duties included:_
     - Focused on Infrastructure-as-Code (Terraform/Terragrunt)
@@ -82,7 +78,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
     - Grafana/Prometheus
 
 - **February 2022 - December 2022:** Security Engineer at **Smartlook**
-
   - Remote
   - _Duties included:_
     - Compliance
@@ -92,7 +87,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
     - Code review, and cooperation with development/DevOps teams on infrastructure security
 
 - **November 2021 - February 2022:** Penetration Tester at **Auxilium Cyber Security**
-
   - Prague Metropolitan Area
   - _Duties included:_
     - Penetration testing (automotive/IoT/hardware/internal/external infrastructure)
@@ -100,7 +94,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
     - Research (automotive/SCADA vulnerabilities) for corporate clients (logistics, transportation, government)
 
 - **January 2021 - November 2021:** Information Security Consultant at **DataSpring s.r.o.**
-
   - Praha - metropolitní oblast
   - _Duties included:_
     - Vulnerability assessment
@@ -110,7 +103,6 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
     - SIEM analysis, SOC mentoring - experience with VMware, firewalls, IPS/IDS, SIEM, VM cluster maintenance, network segregation
 
 - **February 2019 - January 2021:** Editor at **Letem Světem Applem**
-
   - _Duties included:_ Reporting on tech news, research/articles on information security and current events.
 
 - **2013 - 2016:** Assistant Editor **Zing.cz**
@@ -187,5 +179,5 @@ Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly
 - Amazon Web Services Cloud Practitioner
 - DevOps Foundations: Site Reliability Engineering
 - GDPR Compliance: Essential Training
-- IBM QRadar SIEM Foundational Analyst
+- IBM QRadar SIEM Foundational Analyst  
 - Cambridge English C1 Advanced (Score 199)
