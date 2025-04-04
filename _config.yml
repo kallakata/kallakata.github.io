@@ -21,6 +21,44 @@ defaults:
     values:
       layout: "post"
 
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
+
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+
 future: true
 plugins:
   - jekyll-seo-tag
@@ -30,3 +68,54 @@ plugins:
 # Custom variables
 owner : "kallakata"
 year : "2025"
+
+author:
+  avatar           : "mainpy.JPEG"
+  name             : "Pavel Vařenka - @kallakata"
+  pronouns         : "he/him"  
+  bio              : "Platform Engineer, tinkerer, avid Linux enthusiast"
+  location         : "Cyberspace & occasionally Prague"
+  employer         : "Semantic Visions"
+  uri              : "https://linktr.ee/pavelvarenka"
+  email            : "pavel.varenka@protonmail.com" 
+
+  arxiv            : 
+  googlescholar    : 
+  impactstory      : 
+  orcid            : 
+  semantic         : 
+  pubmed           : 
+  researchgate     : 
+  scopus           : 
+
+  bitbucket        : 
+  codepen          : 
+  dribbble         : 
+  github           : "kallakata"
+  kaggle           :   
+  stackoverflow    : 
+
+  bluesky          : "bsky.app"
+  facebook         : 
+  flickr           : 
+  foursquare       : 
+  goodreads        : 
+  google_plus      : 
+  keybase          : 
+  instagram        : 
+  lastfm           : 
+  linkedin         : "https://www.linkedin.com/in/pavelvarenka/"
+  mastodon         : 
+  medium           : "https://medium.com/@pavel.varenka"
+  pinterest        : 
+  soundcloud       : 
+  steam            : 
+  telegram         : "https://t.me/kallakata"
+  tumblr           : 
+  twitter          : 
+  vine             : 
+  weibo            : 
+  wikipedia        : 
+  xing             : 
+  youtube          : 
+  zhihu            : 
