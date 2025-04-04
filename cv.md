@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<div class="cv-content"> 
+
 # Pavel Vařenka
 **Platform Engineer** *@SemanticVisions*
 
@@ -190,3 +192,5 @@ Certifications
 *   GDPR Compliance: Essential Training
 *   IBM QRadar SIEM Foundational Analyst
 *   Cambridge English C1 Advanced (Score 199)
+
+</div>
