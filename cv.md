@@ -28,13 +28,27 @@ redirect_from:
   <h2 class="cv-section-title">Work Experience</h2>
   <div class="cv-grid">
 
-    <div class="cv-grid-left">Sep 2024 – Present</div>
+    <div class="cv-grid-left">May 2025 – Present</div>
+    <div class="cv-grid-right">
+      <strong>Experienced Platform Engineer</strong> at <strong>Veeam</strong>
+      <p>Prague, Czechia</p>
+      <p><em>Duties include:</em></p>
+      <p>- ...</p>
+    </div>
+
+    <div class="cv-grid-left">Sep 2024 – May 2025</div>
     <div class="cv-grid-right">
       <strong>Platform Engineer</strong> at <strong>Semantic Visions</strong>
       <p>Prague, Czechia</p>
+      <p><em>Duties included:</em></p>
+      <p>- Deploying LLMs for data processing</p>
+      <p>- Building internal tools in Python</p>
+      <p>- Infrastructure automation (Terraform)</p>
+      <p>- Managing Google Cloud, CI/CD in Gitlab CI & SWE</p>
+      <p>- Proof-of-concepts, research of new tools</p>
     </div>
 
-    <div class="cv-grid-left">Jun 2021 – Present</div>
+    <div class="cv-grid-left">Jun 2021 – May 2025</div>
     <div class="cv-grid-right">
       <strong>Various Clients - Freelance</strong>
       <p>Prague, Czechia</p>
