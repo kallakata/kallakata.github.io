@@ -21,7 +21,7 @@ redirect_from:
 
 <section class="cv-section">
   <h2 class="cv-section-title">Summary</h2>
-  <p>Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly striving to improve by staying updated in the professional field and technology overall. Current focus revolves around Dev(Sec)Ops, microservices (Golang/C#/Python), cloud (GCP/AWS/Azure), Infrastructure-as-Code, observability, and automation (SRE). Experienced in secure network architecture, SIEM, penetration testing, cloud security, system administration, and large-scale infrastructure automation. Primary goal is combining cloud security knowledge with DevOps and SRE principles. Advocate for open-source (CNCF), automation, re-usability, and the shift-left approach.</p>
+  <p>Platform Engineer with a strong passion for Cybersecurity and DevOps. Constantly striving to improve by staying up-to-date both in the professional field and technology overall. Current focus revolves around Dev(Sec)Ops, microservices (Golang/C#/Python), cloud (GCP/AWS/Azure), Infrastructure-as-Code (Terraform/Pulumi), observability, and automation (SRE). Experienced in secure network architecture, SIEM, penetration testing, cloud security, system administration, and large-scale infrastructure automation. Primary goal is combining cloud security knowledge with DevOps and SRE principles. Advocate for open-source (CNCF), automation, re-usability, and the shift-left approach.</p>
 </section>
 
 <section class="cv-section">
