@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<p style="margin-bottom: 0.5em; "><strong>Platform Engineer</strong> at <em>@SemanticVisions</em></p>
+<p style="margin-bottom: 0.5em; "><strong>Platform Engineer</strong> at <em>@Veeam</em></p>
 <p style="margin-bottom: 1.5em;"><strong>City:</strong> Prague, Czechia</p>
 
 <ul style="list-style: none; padding-left: 0; margin-bottom: 2em;">
