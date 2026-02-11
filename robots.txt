@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /contact.html
+
+Sitemap: https://kallakata.dev/sitemap.xml

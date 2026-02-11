@@ -1,9 +1,7 @@
 title: kallakata.dev
-description: "A Jekyll Blog Theme For Hackers"
-# author:
-#   name: "Pavel Vařenka"
-#   email: "pavel.varenka@protonmail.com"
-#   url: "https://linktr.ee/pavelvarenka"
+description: "Platform Engineering & DevSecOps notes by kallakata"
+url: "https://kallakata.dev"
+image: /assets/mainpy.JPEG
 
 baseurl: /
 

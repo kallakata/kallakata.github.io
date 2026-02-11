@@ -64,14 +64,61 @@ header {
   border-bottom: 1px dashed $conifer;
   padding: 20px;
   margin: 0 0 40px 0;
+  position: relative;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 8px 16px;
+  background: $body-background;
+  color: $header;
+  border: 1px solid $header;
+  z-index: 100;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:focus {
+    top: 10px;
+    left: 10px;
+  }
 }
 
 .header-links {
   text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em 1em;
+  }
+
+  li {
+    display: inline;
+  }
 }
 
 .header-link {
   display: inline;
+  font-size: 18px;
+  font-weight: normal;
+  font-family: $mono-font-stack;
+  color: $header;
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(181, 232, 83, 0.1),
+    0 0 10px rgba(181, 232, 83, 0.1);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 header h1 {
@@ -195,7 +242,7 @@ hr {
 /* Buttons */
 .btn {
   display: inline-block;
-  background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
+  background: linear-gradient(to bottom, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
   padding: 8px 18px;
   border-radius: 50px;
   border: 2px solid rgba(0, 0, 0, 0.7);
@@ -211,7 +258,7 @@ hr {
 }
 
 .btn:hover {
-  background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
+  background: linear-gradient(to bottom, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
 }
 
 .btn .icon {
@@ -235,9 +282,8 @@ a {
 
 a:active,
 a:focus {
-  outline: 0;
-  border: none;
-  -moz-outline-style: none;
+  outline: 2px solid #63c0f5;
+  outline-offset: 2px;
 }
 
 /* Clearfix */
@@ -576,4 +622,17 @@ div.author-profile-embedded ul.author__urls li::marker {
 .author-profile-embedded ul li {
   list-style: none !important;
   list-style-image: none !important;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
