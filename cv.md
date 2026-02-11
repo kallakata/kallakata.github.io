@@ -14,7 +14,7 @@ redirect_from:
 
 <ul style="list-style: none; padding-left: 0; margin-bottom: 2em;">
   <li style="margin-bottom: 0.3em;"><strong>Email:</strong> pavel.varenka@protonmail.com</li>
-  <li style="margin-bottom: 0.3em;"><strong>Phone:</strong> 732967832</li>
+  <li style="margin-bottom: 0.3em;"><strong>Phone:</strong> +420 732 967 832</li>
   <li style="margin-bottom: 0.3em;"><strong>Website:</strong> <a href="https://linktr.ee/pavelvarenka">linktr.ee/pavelvarenka</a></li>
   <li style="margin-bottom: 0.3em;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pavelvarenka">linkedin.com/in/pavelvarenka</a></li>
 </ul>
