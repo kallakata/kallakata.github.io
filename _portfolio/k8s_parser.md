@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes CLI parser"
-excerpt: "A simple parser for Kubernetes metadata in a pretty table output."
+excerpt: "A simple parser for Kubernetes metadata in a pretty table output"
 layout: page
 collection: portfolio
 ---
