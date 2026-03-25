@@ -28,7 +28,15 @@ redirect_from:
   <h2 class="cv-section-title">Work Experience</h2>
   <div class="cv-grid">
 
-    <div class="cv-grid-left">May 2025 – Present</div>
+    <div class="cv-grid-left">March 2026 – Present</div>
+    <div class="cv-grid-right">
+      <strong>Platform/DevOps Engineerr</strong> at <strong>Cato Networks</strong>
+      <p>Prague, Czechia</p>
+      <p><em>Duties include:</em></p>
+      <p>- ...</p>
+    </div>
+
+    <div class="cv-grid-left">May 2025 – Jan 2026</div>
     <div class="cv-grid-right">
       <strong>Experienced Platform Engineer</strong> at <strong>Veeam</strong>
       <p>Prague, Czechia</p>
