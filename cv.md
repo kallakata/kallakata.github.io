@@ -6,7 +6,7 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
+ 
 {% include base_path %}
 
 <p style="margin-bottom: 0.5em; "><strong>Platform/DevOps Engineer</strong> at <em>@CatoNetworks</em></p>
