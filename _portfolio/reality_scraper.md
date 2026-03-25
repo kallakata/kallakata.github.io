@@ -1,6 +1,6 @@
 ---
 title: "Reality Scraper"
-excerpt: "Multi-faceted tool to scrape different real estate websites, with additional LLM layer for qe"
+excerpt: "Multi-faceted tool to scrape different real estate websites, with additional LLM layer for queries"
 layout: page
 collection: portfolio
 ---
