@@ -30,7 +30,7 @@ redirect_from:
 
     <div class="cv-grid-left">March 2026 – Present</div>
     <div class="cv-grid-right">
-      <strong>Platform/DevOps Engineerr</strong> at <strong>Cato Networks</strong>
+      <strong>Platform/DevOps Engineeer</strong> at <strong>Cato Networks</strong>
       <p>Prague, Czechia</p>
       <p><em>Duties include:</em></p>
       <p>- ...</p>
