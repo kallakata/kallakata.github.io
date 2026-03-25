@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<p style="margin-bottom: 0.5em; "><strong>Platform Engineer</strong> at <em>@Veeam</em></p>
+<p style="margin-bottom: 0.5em; "><strong>Platform Engineer</strong> at <em>@CatoNetworks</em></p>
 <p style="margin-bottom: 1.5em;"><strong>City:</strong> Prague, Czechia</p>
 
 <ul style="list-style: none; padding-left: 0; margin-bottom: 2em;">
@@ -33,7 +33,12 @@ redirect_from:
       <strong>Experienced Platform Engineer</strong> at <strong>Veeam</strong>
       <p>Prague, Czechia</p>
       <p><em>Duties include:</em></p>
-      <p>- ...</p>
+      <p>- Maintaing dozens of Azure environments</p>
+      <p>- Azure DevOps builds and pipelines</p>
+      <p>- Infrastructure automation (Terraform, Go & Pulumi )</p>
+      <p>- Preparing GitHub Actions and Typescript jobs for developers</p>
+      <p>- Research of tooling, new platform abstractions</p>
+      <p>- Large-scale Kubernetes deployment</p>
     </div>
 
     <div class="cv-grid-left">Sep 2024 – May 2025</div>
@@ -45,6 +50,7 @@ redirect_from:
       <p>- Building internal tools in Python</p>
       <p>- Infrastructure automation (Terraform)</p>
       <p>- Managing Google Cloud, CI/CD in Gitlab CI & SWE</p>
+      <p>- Kubernetes, security posture and integrations</p>
       <p>- Proof-of-concepts, research of new tools</p>
     </div>
 
