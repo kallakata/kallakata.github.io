@@ -7,7 +7,7 @@ collection: portfolio
 
 [Rohlik MCP](https://github.com/kallakata/rohlik_mcp)
 
-**Forked from original [Rohlík MCP project](https://github.com/tomaspavlin/rohlik-mcp) by Tomas Pavlin**
+**Forked from original [Rohlík MCP project](https://github.com/tomaspavlin/rohlik-mcp) by Tomáš Pavlín**
 
 ---
 
